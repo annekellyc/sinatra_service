@@ -1,0 +1,23 @@
+-> Running the project
+
+$ bundle install
+$ rake migrate
+$ ruby main.rb
+
+-> Consuming the Web Service
+
+For consuming the web service, you can use whatever you want, you can use curl, REST Console (Google Chrome Extension) or any other HTTP client library for your favorite programming language.
+
+-> Curl Example with JSON
+
+HTTP POST
+$ curl -i -X POST -d '{ "title": "The Dark Knight", "director": "Christopher Nolan", "synopsis": "When Batman, Gordon and Harvey Dent launch an assault on the mob, they let the clown out of the box, the Joker, bent on turning Gotham on itself and bringing any heroes down to his level.", "year": 2008}' localhost:4567/api/movies
+
+HTTP GET
+$ curl -X GET "localhost:4567/api/movies/:id"
+
+HTTP PUT
+$ curl -i -X PUT -d '{ "title": "The Shawshank Redemption", "director": "Frank Darabont", "synopsis": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.", "year": 1994}' localhost:4567/api/movies/:id
+
+HTTP DELETE
+$ curl -X DELETE "localhost:4567/api/movies/:id"
